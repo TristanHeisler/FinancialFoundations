@@ -16,10 +16,12 @@ namespace FinancialFoundations
             BindingContext = container.GetInstance<MainPageViewModel>();
         }
 
-        private void ViewCell_Tapped(object sender, System.EventArgs e)
+        private async void ViewCell_Tapped(object sender, System.EventArgs e)
         {
             var subjectMatterUnitID = ((SubjectMatterUnitTableOfContentsEntry)((BindableObject)sender).BindingContext).SubjectMatterUnitID;
             Console.WriteLine(subjectMatterUnitID);
+
+            await Navigation.PushAsync(new UnitOverviewPageView());
         }
     }
 }
