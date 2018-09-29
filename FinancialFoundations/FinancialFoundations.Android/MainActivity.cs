@@ -6,24 +6,29 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using FinancialFoundations.Framework;
 using SimpleInjector;
 
 namespace FinancialFoundations.Droid
 {
-    [Activity(Label = "FinancialFoundations", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
-    {
-        protected override void OnCreate(Bundle savedInstanceState)
-        {
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
+	[Activity(Label = "FinancialFoundations", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+	{
+		protected override void OnCreate(Bundle savedInstanceState)
+		{
+			TabLayoutResource = Resource.Layout.Tabbar;
+			ToolbarResource = Resource.Layout.Toolbar;
 
+			var assembliesToScan = new[] { typeof(StudentWork.Domain.AssemblyMarker).Assembly, typeof(SubjectMatter.Domain.AssemblyMarker).Assembly };
 			var container = new Container();
-			// TODO: register dependencies
+			container.Register(typeof(IAsyncQueryHandler<,>), assembliesToScan);
+			container.Register(typeof(IAsyncCommandHandler<,>), assembliesToScan);
 
 			base.OnCreate(savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
-        }
-    }
+			global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+			// TODO: instantiate the application with all dependencies registered
+			LoadApplication(new App());
+		}
+	}
 }
