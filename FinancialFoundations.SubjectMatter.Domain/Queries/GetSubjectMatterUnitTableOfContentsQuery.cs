@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using FinancialFoundations.Framework;
 
 namespace FinancialFoundations.SubjectMatter.Domain.Queries
 {
-	public class GetSubjectMatterUnitTableOfContentsQuery : IQuery<IEnumerable<SubjectMatterUnitTableOfContentsEntry>>
+	public class GetSubjectMatterUnitTableOfContentsQuery : IQuery<SubjectMatterUnitTableOfContents>
 	{
 		public GetSubjectMatterUnitTableOfContentsQuery(Guid educatorID)
 		{

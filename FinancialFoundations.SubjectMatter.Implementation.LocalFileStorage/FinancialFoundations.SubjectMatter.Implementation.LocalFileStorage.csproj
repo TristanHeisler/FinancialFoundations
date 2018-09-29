@@ -5,12 +5,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="FileModels\SubjectMatterUnitPageSpecification.cs~RF17c127d1.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FinancialFoundations.Framework\FinancialFoundations.Framework.csproj" />
     <ProjectReference Include="..\FinancialFoundations.SubjectMatter.Domain\FinancialFoundations.SubjectMatter.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CommandHandlers\" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
