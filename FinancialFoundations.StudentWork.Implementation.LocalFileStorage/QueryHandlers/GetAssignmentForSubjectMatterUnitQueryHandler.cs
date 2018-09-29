@@ -14,7 +14,6 @@ namespace FinancialFoundations.StudentWork.Implementation.LocalFileStorage.Query
 	{
 		public async Task<Assignment> Handle(GetAssignmentQuery parameters)
 		{
-			// fake retrieving from the web...
 			await Task.Delay(1000);
 
 			var jsonFileContents = File.ReadAllText(new AssignmentFileInfo(parameters.EducatorID, parameters.AssignmentID).ToFilePath());
