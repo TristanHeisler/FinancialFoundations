@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using FinancialFoundations.Framework;
 using Functional;
 
 namespace FinancialFoundations.StudentWork.Domain.Queries
 {
-	public class GetAssignmentQuery : IQuery<Result<Assignment, Exception>>
+	public class GetAssignmentAnswerKeyQuery : IQuery<Result<AssignmentAnswerKey, Exception>>
 	{
-		public GetAssignmentQuery(Guid educatorID, Guid assignmentID)
+		public GetAssignmentAnswerKeyQuery(Guid educatorID, Guid assignmentID)
 		{
 			EducatorID = educatorID;
 			AssignmentID = assignmentID;

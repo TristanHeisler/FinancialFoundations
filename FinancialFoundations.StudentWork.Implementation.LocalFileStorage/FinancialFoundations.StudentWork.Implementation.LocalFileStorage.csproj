@@ -10,14 +10,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FinancialFoundations.Framework\FinancialFoundations.Framework.csproj" />
+    <ProjectReference Include="..\FinancialFoundations.StudentWork.CoreProcessing\FinancialFoundations.StudentWork.CoreProcessing.csproj" />
     <ProjectReference Include="..\FinancialFoundations.StudentWork.Domain\FinancialFoundations.StudentWork.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CommandHandlers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="Functional.Primitives.Extensions" Version="1.8.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
