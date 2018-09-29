@@ -57,9 +57,9 @@ namespace FinancialFoundations.Droid
 				var assignmentID = Guid.NewGuid();
 				var unitJsonContents = JsonConvert.SerializeObject(new SubjectMatterUnit(educatorID, subjectMatterUnit.SubjectMatterUnitID, new[]
 				{
-					new SubjectMatterUnitPage(educatorID, subjectMatterUnit.SubjectMatterUnitID, "Page 1"),
-					new SubjectMatterUnitPage(educatorID, subjectMatterUnit.SubjectMatterUnitID, "Page 2"),
-					new SubjectMatterUnitPage(educatorID, subjectMatterUnit.SubjectMatterUnitID, "Page 3")
+					new SubjectMatterUnitPage(educatorID, subjectMatterUnit.SubjectMatterUnitID, "Page 1", "Content for page 1"),
+					new SubjectMatterUnitPage(educatorID, subjectMatterUnit.SubjectMatterUnitID, "Page 2", "Content for page 2"),
+					new SubjectMatterUnitPage(educatorID, subjectMatterUnit.SubjectMatterUnitID, "Page 3", "Content for page 3")
 				}, assignmentID).ToSubjectMatterUnitSpecification());
 				File.WriteAllText(subjectMatterUnitFileName, unitJsonContents, Encoding.UTF8);
 
