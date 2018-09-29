@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FinancialFoundations.Framework\FinancialFoundations.Framework.csproj" />
+    <ProjectReference Include="..\FinancialFoundations.StudentWork.Domain\FinancialFoundations.StudentWork.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

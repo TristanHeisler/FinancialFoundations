@@ -95,6 +95,18 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\FinancialFoundations.Framework\FinancialFoundations.Framework.csproj">
+      <Project>{1b9a8cb3-1beb-44b2-908c-41652cf7638b}</Project>
+      <Name>FinancialFoundations.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FinancialFoundations.StudentWork.Domain\FinancialFoundations.StudentWork.Domain.csproj">
+      <Project>{2a8d258e-fa01-46bb-ab81-37bac5f4e60d}</Project>
+      <Name>FinancialFoundations.StudentWork.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FinancialFoundations.SubjectMatter.Domain\FinancialFoundations.SubjectMatter.Domain.csproj">
+      <Project>{a907fba8-f917-4f33-81e8-d9ad29a62235}</Project>
+      <Name>FinancialFoundations.SubjectMatter.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FinancialFoundations\FinancialFoundations.csproj">
       <Project>{FE4C48CF-A045-4F9B-B466-BCDC2AA6E64D}</Project>
       <Name>FinancialFoundations</Name>
