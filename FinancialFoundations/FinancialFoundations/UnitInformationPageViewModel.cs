@@ -18,17 +18,10 @@ namespace FinancialFoundations
             {
                 if (_currentPageNumber != value)
                 {
-                    if (value == _configuration.PageCollection.Length)
-                    {
-                        Console.WriteLine("Show the assignment!");
-                    }
-                    else if(value >= 0)
-                    {
-                        _currentPageNumber = value;
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CurrentPageNumber"));
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Title"));
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Content"));
-                    }
+                    _currentPageNumber = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CurrentPageNumber"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Title"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Content"));
                 }
             }
             get => _currentPageNumber;
@@ -40,6 +33,26 @@ namespace FinancialFoundations
         public UnitInformationPageViewModel(UnitInformationPageViewModelConfiguration configuration)
         {
             _configuration = configuration;
+        }
+
+        public bool GoToPreviousPage()
+        {
+            if (CurrentPageNumber == 0)
+            {
+                return false;
+            }
+            CurrentPageNumber--;
+            return true;
+        }
+
+        public bool GoToNextPage()
+        {
+            if (CurrentPageNumber == _configuration.PageCollection.Length - 1)
+            {
+                return false;
+            }
+            CurrentPageNumber++;
+            return true;
         }
     }
 }

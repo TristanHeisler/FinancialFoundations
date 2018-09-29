@@ -18,16 +18,20 @@ namespace FinancialFoundations
             ((UnitInformationPageViewModel)BindingContext).CurrentPageNumber = 0;
         }
 
-        private void ButtonPrevious_Clicked(object sender, EventArgs e)
+        private async void ButtonPrevious_Clicked(object sender, EventArgs e)
         {
-            ((UnitInformationPageViewModel)BindingContext).CurrentPageNumber--;
-            Console.WriteLine("Prev");
+            if(!((UnitInformationPageViewModel)BindingContext).GoToPreviousPage())
+            {
+                await Navigation.PopToRootAsync();
+            }
         }
 
-        private void ButtonNext_Clicked(object sender, EventArgs e)
+        private async void ButtonNext_Clicked(object sender, EventArgs e)
         {
-            ((UnitInformationPageViewModel)BindingContext).CurrentPageNumber++;
-            Console.WriteLine("Next");
+            if(!((UnitInformationPageViewModel)BindingContext).GoToNextPage())
+            {
+                await Navigation.PushAsync(new AssignmentPageView());
+            }
         }
     }
 }

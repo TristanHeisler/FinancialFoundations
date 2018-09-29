@@ -7,7 +7,6 @@
     <StackLayout>
         <Label HorizontalTextAlignment="Center" Text="{Binding Title}"/>
         <Label HorizontalTextAlignment="Center" Text="{Binding Content}"/>
-        <Label HorizontalTextAlignment="Center" Text="{Binding CurrentPageNumber}"/>
         <Button Clicked="ButtonPrevious_Clicked" Text="Previous"/>
         <Button Clicked="ButtonNext_Clicked" Text="Next"/>
     </StackLayout>
