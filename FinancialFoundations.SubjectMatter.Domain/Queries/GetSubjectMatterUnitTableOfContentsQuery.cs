@@ -1,9 +1,10 @@
 ﻿using System;
 using FinancialFoundations.Framework;
+using Functional;
 
 namespace FinancialFoundations.SubjectMatter.Domain.Queries
 {
-	public class GetSubjectMatterUnitTableOfContentsQuery : IQuery<SubjectMatterUnitTableOfContents>
+	public class GetSubjectMatterUnitTableOfContentsQuery : IQuery<Result<SubjectMatterUnitTableOfContents, Exception>>
 	{
 		public GetSubjectMatterUnitTableOfContentsQuery(Guid educatorID)
 		{

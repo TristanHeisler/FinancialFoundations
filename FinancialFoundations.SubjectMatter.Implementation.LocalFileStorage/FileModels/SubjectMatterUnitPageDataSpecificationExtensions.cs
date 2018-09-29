@@ -9,7 +9,9 @@ namespace FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage.Fil
 			return new SubjectMatterUnitPageDataSpecification
 			{
 				EducatorID = source.EducatorID,
-				SubjectMatterUnitID = source.SubjectMatterUnitID
+				SubjectMatterUnitID = source.SubjectMatterUnitID,
+				Title = source.Title,
+				Content = source.Content
 			};
 		}
 
