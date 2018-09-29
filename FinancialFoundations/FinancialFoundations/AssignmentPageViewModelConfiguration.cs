@@ -1,14 +1,17 @@
-﻿using FinancialFoundations.StudentWork.Domain;
+﻿using System;
+using FinancialFoundations.StudentWork.Domain;
 
 namespace FinancialFoundations
 {
 	public class AssignmentPageViewModelConfiguration
 	{
-		public AssignmentPageViewModelConfiguration(Assignment assignment)
+		public AssignmentPageViewModelConfiguration(Guid studentID, Assignment assignment)
 		{
+			StudentID = studentID;
 			Assignment = assignment;
 		}
 
+		public Guid StudentID { get; }
 		public Assignment Assignment { get; }
 	}
 }
