@@ -19,7 +19,12 @@ namespace FinancialFoundations.Droid
 			TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
 
-			var assembliesToScan = new[] { typeof(StudentWork.Domain.AssemblyMarker).Assembly, typeof(SubjectMatter.Domain.AssemblyMarker).Assembly };
+			var assembliesToScan = new[]
+			{
+				typeof(StudentWork.Implementation.LocalFileStorage.AssemblyMarker).Assembly,
+				typeof(SubjectMatter.Implementation.LocalFileStorage.AssemblyMarker).Assembly
+			};
+
 			var container = new Container();
 			container.Register(typeof(IAsyncQueryHandler<,>), assembliesToScan);
 			container.Register(typeof(IAsyncCommandHandler<,>), assembliesToScan);
