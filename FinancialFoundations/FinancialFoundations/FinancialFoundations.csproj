@@ -27,6 +27,9 @@
     <Compile Update="MainPageView.xaml.cs">
       <DependentUpon>MainPageView.xaml</DependentUpon>
     </Compile>
+    <Compile Update="AssignmentPageView.xaml.cs">
+      <DependentUpon>AssignmentPageView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="UnitInformationPageView.xaml.cs">
       <DependentUpon>UnitInformationPageView.xaml</DependentUpon>
     </Compile>
