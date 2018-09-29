@@ -6,15 +6,13 @@
 
   <ItemGroup>
     <None Remove="Assignment.cs~RF1733b6c5.TMP" />
+    <None Remove="Queries\GetAssignmentAnswerKeyQuery.cs~RF19c88e30.TMP" />
+    <None Remove="Queries\GetStudentGradeForAssignmentQuery.cs~RF19ffa343.TMP" />
     <None Remove="_AssemblyMarker.cs~RF1715f7b8.TMP" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FinancialFoundations.Framework\FinancialFoundations.Framework.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Commands\" />
   </ItemGroup>
 
 </Project>
