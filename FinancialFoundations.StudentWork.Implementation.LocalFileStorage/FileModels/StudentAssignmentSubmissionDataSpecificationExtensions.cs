@@ -12,7 +12,7 @@ namespace FinancialFoundations.StudentWork.Implementation.LocalFileStorage.FileM
 				EducatorID = source.EducatorID,
 				AssignmentID = source.AssignmentID,
 				StudentID = source.StudentID,
-				AnswerCollection = source.MultipleChoiceQuestionAnswerCollection.Select(x => StudentAssignmentSubmissionMultipleChoiceQuestionAnswerDataSpecificationExtensions.ToStudentAssignmentSubmissionAnswerEntryDataSpecification(x)).ToArray()
+				AnswerCollection = source.MultipleChoiceQuestionAnswerCollection.Select(x => x.ToStudentAssignmentSubmissionAnswerEntryDataSpecification()).ToArray()
 			};
 		}
 
