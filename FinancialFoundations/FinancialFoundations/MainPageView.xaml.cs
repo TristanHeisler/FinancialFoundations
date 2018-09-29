@@ -1,5 +1,6 @@
 ﻿using FinancialFoundations.SubjectMatter.Domain;
 using SimpleInjector;
+using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -17,7 +18,8 @@ namespace FinancialFoundations
 
         private void ViewCell_Tapped(object sender, System.EventArgs e)
         {
-            var x = "Tap event reached.";
+            var subjectMatterUnitID = ((SubjectMatterUnitTableOfContentsEntry)((BindableObject)sender).BindingContext).SubjectMatterUnitID;
+            Console.WriteLine(unitID);
         }
     }
 }

@@ -23,6 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="UnitView.xaml.cs">
+      <DependentUpon>UnitView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="MainPageView.xaml.cs">
       <DependentUpon>MainPageView.xaml</DependentUpon>
     </Compile>

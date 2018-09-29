@@ -41,10 +41,5 @@ namespace FinancialFoundations
         {
             TableOfContents = await _tableOfContentsQueryHandler.Handle(new GetSubjectMatterUnitTableOfContentsQuery(Guid.Empty));
         }
-
-        public void SelectUnit()
-        {
-            Console.WriteLine("A unit was selected\n");
-        }
     }
 }
