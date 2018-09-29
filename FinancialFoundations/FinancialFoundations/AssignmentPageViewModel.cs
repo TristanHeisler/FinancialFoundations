@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinancialFoundations.StudentWork.Domain;
+using System;
 using System.ComponentModel;
 using System.Text;
 using FinancialFoundations.Extensions;
@@ -6,7 +7,7 @@ using FinancialFoundations.Models;
 
 namespace FinancialFoundations
 {
-    class AssignmentPageViewModel : INotifyPropertyChanged
+    public class AssignmentPageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -17,6 +18,8 @@ namespace FinancialFoundations
 	    {
 		    _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
 		    _assignmentData = configuration.Assignment.ToAssignmentInProgress(configuration.StudentID);
-	    }
+        }
+
+        public IEnumerable<AssignmentMultipleChoiceQuestion> MultipleChoiceQuestionCollection => _configuration.Assignment.MultipleChoiceQuestionCollection;
     }
 }

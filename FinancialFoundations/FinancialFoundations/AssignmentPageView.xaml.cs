@@ -10,7 +10,6 @@ namespace FinancialFoundations
 		{
             InitializeComponent();
 			var configuration = new AssignmentPageViewModelConfiguration(assignment);
-
             var container = new Container();
             container.RegisterDependencies();
 			container.RegisterInstance(configuration);
