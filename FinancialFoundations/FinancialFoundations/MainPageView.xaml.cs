@@ -7,11 +7,12 @@ using Xamarin.Forms;
 
 namespace FinancialFoundations
 {
-	public partial class MainPage : ContentPage
+	public partial class MainPageView : ContentPage
 	{
-		public MainPage()
+		public MainPageView(MainPageViewModel viewModel)
 		{
 			InitializeComponent();
-		}
+            BindingContext = viewModel;
+        }
 	}
 }

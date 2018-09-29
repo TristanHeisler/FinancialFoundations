@@ -12,4 +12,14 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage\FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MainPageView.xaml.cs">
+      <DependentUpon>MainPageView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
