@@ -41,10 +41,13 @@ namespace FinancialFoundations.Droid
 			var tableOfContentsFileName = new SubjectMatterUnitTableOfContentsFileInfo(educatorID).ToFilePath();
 			var tableOfContents = new SubjectMatterUnitTableOfContents(educatorID, new[]
 			{
-				new SubjectMatterUnitTableOfContentsEntry(Guid.NewGuid(), "Unit 1", false),
-				new SubjectMatterUnitTableOfContentsEntry(Guid.NewGuid(), "Unit 2", false),
-				new SubjectMatterUnitTableOfContentsEntry(Guid.NewGuid(), "Unit 3", false)
-			});
+				new SubjectMatterUnitTableOfContentsEntry(Guid.NewGuid(), "Retirement", false),
+				new SubjectMatterUnitTableOfContentsEntry(Guid.NewGuid(), "Investment", false),
+				new SubjectMatterUnitTableOfContentsEntry(Guid.NewGuid(), "Mortages", false),
+                new SubjectMatterUnitTableOfContentsEntry(Guid.NewGuid(), "Banking", false),
+                new SubjectMatterUnitTableOfContentsEntry(Guid.NewGuid(), "Goal-Setting", false),
+                new SubjectMatterUnitTableOfContentsEntry(Guid.NewGuid(), "Credit Cards", false)
+            });
 			var tableOfContentsJsonContents = JsonConvert.SerializeObject(tableOfContents.ToSubjectMatterUnitTableOfContentsSpecification());
 			File.WriteAllText(tableOfContentsFileName, tableOfContentsJsonContents, Encoding.UTF8);
 
@@ -57,9 +60,9 @@ namespace FinancialFoundations.Droid
 				var assignmentID = Guid.NewGuid();
 				var unitJsonContents = JsonConvert.SerializeObject(new SubjectMatterUnit(educatorID, subjectMatterUnit.SubjectMatterUnitID, new[]
 				{
-					new SubjectMatterUnitPage(educatorID, subjectMatterUnit.SubjectMatterUnitID, "Page 1", "Content for page 1"),
-					new SubjectMatterUnitPage(educatorID, subjectMatterUnit.SubjectMatterUnitID, "Page 2", "Content for page 2"),
-					new SubjectMatterUnitPage(educatorID, subjectMatterUnit.SubjectMatterUnitID, "Page 3", "Content for page 3")
+					new SubjectMatterUnitPage(educatorID, subjectMatterUnit.SubjectMatterUnitID, "Choosing a credit card", "You should look for:\n\tCost of borrowing (APR)\n\tMinimum payment\n\tAnnual fee\n\tOverdraft charges\n\tRewards/cashback"),
+					new SubjectMatterUnitPage(educatorID, subjectMatterUnit.SubjectMatterUnitID, "Housing", "Evaluate available housing alternatives.\n\n Evaluate your needs, life situation and financial resources.\n\n Assess renting and buying alternatives."),
+                    new SubjectMatterUnitPage(educatorID, subjectMatterUnit.SubjectMatterUnitID, "Retirement", "Successful, happy retirement takes proper planning and evaluation. Planning helps us anticipate future changes while gaining control over our future.\n\nRetirement planning is the planning one does to be prepared for life after paid work ends. The goal of retirement planning is to achieve financial independence.")
 				}, assignmentID).ToSubjectMatterUnitSpecification());
 				File.WriteAllText(subjectMatterUnitFileName, unitJsonContents, Encoding.UTF8);
 
