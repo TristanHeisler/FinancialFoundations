@@ -2,13 +2,14 @@
 using SimpleInjector;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace FinancialFoundations
 {
 	public partial class UnitInformationPageView : ContentPage
 	{
-		public UnitInformationPageView(Guid subjectMatterUnitID, List<SubjectMatterUnitPage> unitPages)
+		public UnitInformationPageView(Guid subjectMatterUnitID, IEnumerable<SubjectMatterUnitPage> unitPages)
 		{
             InitializeComponent();
             var container = new Container();
