@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FinancialFoundations"
+             x:Class="FinancialFoundations.UnitInformationPageView">
+
+    <StackLayout>
+        <Label HorizontalTextAlignment="Center" Text="{Binding Title}"/>
+        <Label HorizontalTextAlignment="Center" Text="{Binding Content}"/>
+        <Label HorizontalTextAlignment="Center" Text="{Binding CurrentPageNumber}"/>
+        <Button Clicked="ButtonPrevious_Clicked" Text="Previous"/>
+        <Button Clicked="ButtonNext_Clicked" Text="Next"/>
+    </StackLayout>
+
+</ContentPage>
