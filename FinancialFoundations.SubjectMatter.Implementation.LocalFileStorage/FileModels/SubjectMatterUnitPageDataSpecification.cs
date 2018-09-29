@@ -7,5 +7,6 @@ namespace FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage.Fil
 	{
 		public Guid EducatorID { get; set; }
 		public Guid SubjectMatterUnitID { get; set; }
+		public string Content { get; set; }
 	}
 }
