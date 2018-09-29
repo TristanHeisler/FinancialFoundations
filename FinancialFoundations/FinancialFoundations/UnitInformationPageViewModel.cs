@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
+using FinancialFoundations.Framework;
+using FinancialFoundations.StudentWork.Domain;
+using FinancialFoundations.StudentWork.Domain.Queries;
+using Functional;
 
 namespace FinancialFoundations
 {
@@ -10,8 +15,17 @@ namespace FinancialFoundations
         public event PropertyChangedEventHandler PropertyChanged;
 
         private readonly UnitInformationPageViewModelConfiguration _configuration;
+		private readonly IAsyncQueryHandler<GetAssignmentQuery, Result<Assignment, Exception>> _getAssignmentQueryHandler;
 
-        private int _currentPageNumber;
+	    public UnitInformationPageViewModel(
+		    UnitInformationPageViewModelConfiguration configuration,
+		    IAsyncQueryHandler<GetAssignmentQuery, Result<Assignment, Exception>> getAssignmentQueryHandler)
+	    {
+		    _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+		    _getAssignmentQueryHandler = getAssignmentQueryHandler ?? throw new ArgumentNullException(nameof(getAssignmentQueryHandler));
+	    }
+
+		private int _currentPageNumber;
         public int CurrentPageNumber
         {
             set
@@ -29,11 +43,6 @@ namespace FinancialFoundations
 
         public string Title => _configuration.PageCollection[_currentPageNumber].Title;
         public string Content => _configuration.PageCollection[_currentPageNumber].Content;
-
-        public UnitInformationPageViewModel(UnitInformationPageViewModelConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
 
         public bool GoToPreviousPage()
         {
@@ -54,5 +63,10 @@ namespace FinancialFoundations
             CurrentPageNumber++;
             return true;
         }
+
+	    public async Task<Assignment> LoadAssignment(Guid educatorID, Guid associatedAssignmentID)
+	    {
+		    return (await _getAssignmentQueryHandler.Handle(new GetAssignmentQuery(educatorID, associatedAssignmentID))).EnsureSuccess();
+	    }
     }
 }

@@ -23,7 +23,7 @@ namespace FinancialFoundations
             var subjectMatterUnitID = ((SubjectMatterUnitTableOfContentsEntry)((BindableObject)sender).BindingContext).SubjectMatterUnitID;
 	        var subjectMatterUnit = await ((MainPageViewModel) BindingContext).LoadSubjectMatterUnit(subjectMatterUnitID);
 
-			await Navigation.PushAsync(new UnitInformationPageView(subjectMatterUnitID, subjectMatterUnit.PageCollection));
+			await Navigation.PushAsync(new UnitInformationPageView(subjectMatterUnitID, subjectMatterUnit.PageCollection, subjectMatterUnit.AssociatedAssignmentID));
         }
     }
 }

@@ -9,12 +9,16 @@ namespace FinancialFoundations
 {
 	public partial class UnitInformationPageView : ContentPage
 	{
-		public UnitInformationPageView(Guid subjectMatterUnitID, IEnumerable<SubjectMatterUnitPage> unitPages)
+		private readonly Guid _associatedAssignmentID;
+
+		public UnitInformationPageView(Guid subjectMatterUnitID, IEnumerable<SubjectMatterUnitPage> unitPages, Guid associatedAssignmentID)
 		{
+			_associatedAssignmentID = associatedAssignmentID;
+
             InitializeComponent();
             var container = new Container();
             container.RegisterDependencies();
-            container.RegisterInstance(new UnitInformationPageViewModelConfiguration(subjectMatterUnitID, unitPages.ToArray()));
+            container.RegisterInstance(new UnitInformationPageViewModelConfiguration(subjectMatterUnitID, unitPages.ToArray(), associatedAssignmentID));
             BindingContext = container.GetInstance<UnitInformationPageViewModel>();
             ((UnitInformationPageViewModel)BindingContext).CurrentPageNumber = 0;
         }
@@ -31,7 +35,8 @@ namespace FinancialFoundations
         {
             if(!((UnitInformationPageViewModel)BindingContext).GoToNextPage())
             {
-                await Navigation.PushAsync(new AssignmentPageView());
+	            var assignment = await ((UnitInformationPageViewModel)BindingContext).LoadAssignment(Guid.Empty, _associatedAssignmentID);
+				await Navigation.PushAsync(new AssignmentPageView(assignment));
             }
         }
     }
