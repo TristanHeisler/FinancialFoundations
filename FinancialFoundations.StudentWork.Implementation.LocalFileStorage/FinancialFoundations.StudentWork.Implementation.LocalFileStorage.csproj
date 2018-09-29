@@ -5,12 +5,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="FileModels\AssignmentMultipleChoiceQuestionDataSpecification.cs~RF17f741da.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FinancialFoundations.Framework\FinancialFoundations.Framework.csproj" />
     <ProjectReference Include="..\FinancialFoundations.StudentWork.Domain\FinancialFoundations.StudentWork.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="CommandHandlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

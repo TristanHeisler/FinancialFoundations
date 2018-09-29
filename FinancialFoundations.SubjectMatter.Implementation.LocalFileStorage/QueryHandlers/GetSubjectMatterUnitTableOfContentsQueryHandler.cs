@@ -16,7 +16,7 @@ namespace FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage.Que
 			await Task.Delay(1000);
 
 			var jsonFileContents = File.ReadAllText(new SubjectMatterUnitTableOfContentsFileInfo(parameters.EducatorID).ToFilePath());
-			return JsonConvert.DeserializeObject<SubjectMatterUnitTableOfContentsSpecification>(jsonFileContents).ToSubjectMatterUnitTableOfContents();
+			return JsonConvert.DeserializeObject<SubjectMatterUnitTableOfContentsDataSpecification>(jsonFileContents).ToSubjectMatterUnitTableOfContents();
 		}
 	}
 }

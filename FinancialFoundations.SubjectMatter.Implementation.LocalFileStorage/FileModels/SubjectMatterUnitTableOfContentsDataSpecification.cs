@@ -3,9 +3,9 @@
 namespace FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage.FileModels
 {
 	[Serializable]
-	public class SubjectMatterUnitTableOfContentsSpecification
+	public class SubjectMatterUnitTableOfContentsDataSpecification
 	{
 		public Guid EducatorID { get; set; }
-		public SubjectMatterUnitTableOfContentsEntrySpecification[] EntryCollection { get; set; }
+		public SubjectMatterUnitTableOfContentsEntryDataSpecification[] EntryCollection { get; set; }
 	}
 }

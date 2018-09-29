@@ -3,7 +3,7 @@
 namespace FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage.FileModels
 {
 	[Serializable]
-	public class SubjectMatterUnitTableOfContentsEntrySpecification
+	public class SubjectMatterUnitTableOfContentsEntryDataSpecification
 	{
 		public Guid SubjectMatterUnitID { get; set; }
 		public string Title { get; set; }

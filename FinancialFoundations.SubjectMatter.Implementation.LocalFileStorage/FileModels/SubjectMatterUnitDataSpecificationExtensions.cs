@@ -3,11 +3,11 @@ using FinancialFoundations.SubjectMatter.Domain;
 
 namespace FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage.FileModels
 {
-	public static class SubjectMatterUnitSpecificationExtensions
+	public static class SubjectMatterUnitDataSpecificationExtensions
 	{
-		public static SubjectMatterUnitSpecification ToSubjectMatterUnitSpecification(this SubjectMatterUnit source)
+		public static SubjectMatterUnitDataSpecification ToSubjectMatterUnitSpecification(this SubjectMatterUnit source)
 		{
-			return new SubjectMatterUnitSpecification
+			return new SubjectMatterUnitDataSpecification
 			{
 				EducatorID = source.EducatorID,
 				SubjectMatterUnitID = source.SubjectMatterUnitID,
@@ -16,7 +16,7 @@ namespace FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage.Fil
 			};
 		}
 
-		public static SubjectMatterUnit ToSubjectMatterUnit(this SubjectMatterUnitSpecification source)
+		public static SubjectMatterUnit ToSubjectMatterUnit(this SubjectMatterUnitDataSpecification source)
 		{
 			return new SubjectMatterUnit(source.EducatorID, source.SubjectMatterUnitID, source.PageCollection.Select(x => x.ToSubjectMatterUnitPage()), source.AssociatedAssignmentID);
 		}
