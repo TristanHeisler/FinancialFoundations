@@ -53,6 +53,10 @@ namespace FinancialFoundations.Droid
 				File.WriteAllText(tableOfContentsFileName, jsonContents, Encoding.UTF8);
 			}
 
+			var tableOfContents = Task.Run(() => container.GetInstance<IAsyncQueryHandler<GetSubjectMatterUnitTableOfContentsQuery, SubjectMatterUnitTableOfContents>>()
+				.Handle(new GetSubjectMatterUnitTableOfContentsQuery(educatorID)))
+				.Result;
+			
 			base.OnCreate(savedInstanceState);
 			global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 

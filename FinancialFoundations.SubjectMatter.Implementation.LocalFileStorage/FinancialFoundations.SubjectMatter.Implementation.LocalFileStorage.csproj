@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="FileModels\SubjectMatterUnitPageSpecification.cs~RF17c127d1.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FinancialFoundations.Framework\FinancialFoundations.Framework.csproj" />
     <ProjectReference Include="..\FinancialFoundations.SubjectMatter.Domain\FinancialFoundations.SubjectMatter.Domain.csproj" />
   </ItemGroup>

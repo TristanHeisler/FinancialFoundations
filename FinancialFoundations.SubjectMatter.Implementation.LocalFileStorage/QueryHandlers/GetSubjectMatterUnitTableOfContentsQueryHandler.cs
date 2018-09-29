@@ -13,7 +13,6 @@ namespace FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage.Que
 	{
 		public async Task<SubjectMatterUnitTableOfContents> Handle(GetSubjectMatterUnitTableOfContentsQuery parameters)
 		{
-			// fake retrieving from the web...
 			await Task.Delay(1000);
 
 			var jsonFileContents = File.ReadAllText(new SubjectMatterUnitTableOfContentsFileInfo(parameters.EducatorID).ToFilePath());
