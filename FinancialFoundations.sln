@@ -9,17 +9,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialFoundations", "Fin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialFoundations.Framework", "FinancialFoundations.Framework\FinancialFoundations.Framework.csproj", "{1B9A8CB3-1BEB-44B2-908C-41652CF7638B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialFoundations.StudentWork.Domain", "FinancialFoundations.StudentWork.Domain\FinancialFoundations.StudentWork.Domain.csproj", "{2A8D258E-FA01-46BB-AB81-37BAC5F4E60D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialFoundations.StudentWork.Domain", "FinancialFoundations.StudentWork.Domain\FinancialFoundations.StudentWork.Domain.csproj", "{2A8D258E-FA01-46BB-AB81-37BAC5F4E60D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialFoundations.SubjectMatter.Domain", "FinancialFoundations.SubjectMatter.Domain\FinancialFoundations.SubjectMatter.Domain.csproj", "{A907FBA8-F917-4F33-81E8-D9AD29A62235}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialFoundations.SubjectMatter.Domain", "FinancialFoundations.SubjectMatter.Domain\FinancialFoundations.SubjectMatter.Domain.csproj", "{A907FBA8-F917-4F33-81E8-D9AD29A62235}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "G", "G", "{9670A2AB-B5DC-43C8-94D1-C58ED547F417}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{DE424437-FA6D-48AD-93EB-2146F55CEAE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialFoundations.StudentWork.Implementation.LocalFileStorage", "FinancialFoundations.StudentWork.Implementation.LocalFileStorage\FinancialFoundations.StudentWork.Implementation.LocalFileStorage.csproj", "{4BC38BFF-2C40-4492-A661-2F5C75DFF5B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialFoundations.StudentWork.Implementation.LocalFileStorage", "FinancialFoundations.StudentWork.Implementation.LocalFileStorage\FinancialFoundations.StudentWork.Implementation.LocalFileStorage.csproj", "{4BC38BFF-2C40-4492-A661-2F5C75DFF5B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage", "FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage\FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage.csproj", "{81848CAB-9AAD-4AA5-9DDB-23C9AD2CB86F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage", "FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage\FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage.csproj", "{81848CAB-9AAD-4AA5-9DDB-23C9AD2CB86F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
