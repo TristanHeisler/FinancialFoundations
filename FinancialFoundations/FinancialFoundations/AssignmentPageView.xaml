@@ -5,7 +5,21 @@
              x:Class="FinancialFoundations.AssignmentPageView">
 
     <StackLayout>
-        <Label Text="This is the assignment page."/>
+        <Label Text="Assignment"/>
+        <ListView HasUnevenRows="True" ItemsSource="{Binding MultipleChoiceQuestionCollection}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell IsEnabled="false">
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding QuestionText}"/>
+                            <Label HorizontalTextAlignment="Center" Text="{Binding AnswerCollection[0].AnswerText}" VerticalTextAlignment="Center"/>
+                            <Label HorizontalTextAlignment="Center" Text="{Binding AnswerCollection[1].AnswerText}" VerticalTextAlignment="Center"/>
+                            <Label HorizontalTextAlignment="Center" Text="{Binding AnswerCollection[2].AnswerText}" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>

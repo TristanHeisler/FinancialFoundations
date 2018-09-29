@@ -84,7 +84,7 @@ namespace FinancialFoundations.Droid
 						EducatorID = educatorID,
 						AssignmentID = assignmentID,
 						QuestionID = questionID,
-						QuestionText = "",
+						QuestionText = "Which topic was not covered in this presentation?",
 						AnswerIDCollection = new[] { correctAnswerID, Guid.NewGuid(), Guid.NewGuid() }.OrderBy(x => x).ToArray(),
 						CorrectAnswerID = correctAnswerID
 					};
@@ -95,13 +95,13 @@ namespace FinancialFoundations.Droid
 					foreach (var answerID in questionSpecification.AnswerIDCollection)
 					{
 						var answerFileName = new AssignmentMultipleChoiceQuestionAnswerFileInfo(educatorID, assignmentID, questionID, answerID).ToFilePath();
-						var answerJsonContents = JsonConvert.SerializeObject(new AssignmentMultipleChoiceQuestionAnswerDataSpecification
-						{
-							EducatorID = educatorID,
-							AssignmentID = assignmentID,
-							QuestionID = questionID,
-							AnswerID = answerID,
-							AnswerText = ""
+                        var answerJsonContents = JsonConvert.SerializeObject(new AssignmentMultipleChoiceQuestionAnswerDataSpecification
+                        {
+                            EducatorID = educatorID,
+                            AssignmentID = assignmentID,
+                            QuestionID = questionID,
+                            AnswerID = answerID,
+                            AnswerText = "Answer"
 						});
 						File.WriteAllText(answerFileName, answerJsonContents, Encoding.UTF8);
 					}
