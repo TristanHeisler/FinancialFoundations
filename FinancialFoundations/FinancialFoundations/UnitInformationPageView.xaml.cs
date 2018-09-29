@@ -36,7 +36,7 @@ namespace FinancialFoundations
             if(!((UnitInformationPageViewModel)BindingContext).GoToNextPage())
             {
 	            var assignment = await ((UnitInformationPageViewModel)BindingContext).LoadAssignment(Guid.Empty, _associatedAssignmentID);
-				await Navigation.PushAsync(new AssignmentPageView(assignment));
+				await Navigation.PushAsync(new AssignmentPageView(Guid.Empty, assignment));
             }
         }
     }

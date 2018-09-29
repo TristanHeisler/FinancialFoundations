@@ -8,6 +8,7 @@
     <None Remove="Queries\GetSubjectMatterUnitQuery.cs~RF173b6e7b.TMP" />
     <None Remove="Queries\GetSubjectMatterUnitTableOfContentsQuery.cs~RF173fc5a0.TMP" />
     <None Remove="Queries\GetSubjectMatterUnitTableOfContentsQuery.cs~RF179774b5.TMP" />
+    <None Remove="SubjectMatterUnitTableOfContentsEntry.cs~RF1b4ff21c.TMP" />
   </ItemGroup>
 
   <ItemGroup>
