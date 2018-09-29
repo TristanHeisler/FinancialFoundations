@@ -103,9 +103,17 @@
       <Project>{2a8d258e-fa01-46bb-ab81-37bac5f4e60d}</Project>
       <Name>FinancialFoundations.StudentWork.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\FinancialFoundations.StudentWork.Implementation.LocalFileStorage\FinancialFoundations.StudentWork.Implementation.LocalFileStorage.csproj">
+      <Project>{4bc38bff-2c40-4492-a661-2f5c75dff5b9}</Project>
+      <Name>FinancialFoundations.StudentWork.Implementation.LocalFileStorage</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\FinancialFoundations.SubjectMatter.Domain\FinancialFoundations.SubjectMatter.Domain.csproj">
       <Project>{a907fba8-f917-4f33-81e8-d9ad29a62235}</Project>
       <Name>FinancialFoundations.SubjectMatter.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage\FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage.csproj">
+      <Project>{81848cab-9aad-4aa5-9ddb-23c9ad2cb86f}</Project>
+      <Name>FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage</Name>
     </ProjectReference>
     <ProjectReference Include="..\FinancialFoundations\FinancialFoundations.csproj">
       <Project>{FE4C48CF-A045-4F9B-B466-BCDC2AA6E64D}</Project>

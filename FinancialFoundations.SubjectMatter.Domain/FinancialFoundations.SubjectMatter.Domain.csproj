@@ -5,7 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Queries\GetSubjectMatterUnitQuery.cs~RF173b6e7b.TMP" />
+    <None Remove="Queries\GetSubjectMatterUnitTableOfContentsQuery.cs~RF173fc5a0.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FinancialFoundations.Framework\FinancialFoundations.Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Commands\" />
   </ItemGroup>
 
 </Project>
