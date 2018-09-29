@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FinancialFoundations.StudentWork.CoreProcessing
+namespace FinancialFoundations.StudentWork.Domain
 {
 	public class StudentGrade : IEquatable<StudentGrade>
 	{
