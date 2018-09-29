@@ -15,7 +15,7 @@ namespace FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage.Fil
 
 		public static SubjectMatterUnitPage ToSubjectMatterUnitPage(this SubjectMatterUnitPageDataSpecification source)
 		{
-			return new SubjectMatterUnitPage(source.EducatorID, source.SubjectMatterUnitID, source.Content);
+			return new SubjectMatterUnitPage(source.EducatorID, source.SubjectMatterUnitID, source.Title, source.Content);
 		}
 	}
 }
