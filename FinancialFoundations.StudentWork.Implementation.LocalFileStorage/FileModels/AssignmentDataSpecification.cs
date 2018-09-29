@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using FinancialFoundations.StudentWork.Domain;
 
 namespace FinancialFoundations.StudentWork.Implementation.LocalFileStorage.FileModels
 {
