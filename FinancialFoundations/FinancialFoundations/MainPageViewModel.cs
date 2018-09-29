@@ -1,8 +1,9 @@
-﻿using FinancialFoundations.SubjectMatter.Domain;
+﻿using FinancialFoundations.Framework;
+using FinancialFoundations.SubjectMatter.Domain;
 using FinancialFoundations.SubjectMatter.Domain.Queries;
-using FinancialFoundations.SubjectMatter.Implementation.LocalFileStorage.QueryHandlers;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading.Tasks;
 
@@ -12,7 +13,7 @@ namespace FinancialFoundations
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private GetSubjectMatterUnitTableOfContentsQueryHandler _tableOfContentsQueryHandler;
+        private IAsyncQueryHandler<GetSubjectMatterUnitTableOfContentsQuery, IEnumerable<SubjectMatterUnitTableOfContentsEntry>> _tableOfContentsQueryHandler;
 
         private IEnumerable<SubjectMatterUnitTableOfContentsEntry> _tableOfContents;
         public IEnumerable<SubjectMatterUnitTableOfContentsEntry> TableOfContents
@@ -28,14 +29,16 @@ namespace FinancialFoundations
             get => _tableOfContents;
         }
 
-        public MainPageViewModel(GetSubjectMatterUnitTableOfContentsQueryHandler tableOfContentsQueryHandler)
+        public MainPageViewModel(IAsyncQueryHandler<GetSubjectMatterUnitTableOfContentsQuery, IEnumerable<SubjectMatterUnitTableOfContentsEntry>> tableOfContentsQueryHandler)
         {
-            _tableOfContentsQueryHandler = tableOfContentsQueryHandler; 
+            _tableOfContentsQueryHandler = tableOfContentsQueryHandler;
+
+            Task.Run(async () => { await LoadTableOfContents(); });
         }
 
-        public async Task LoadData()
+        public async Task LoadTableOfContents()
         {
-            TableOfContents = await _tableOfContentsQueryHandler.Handle(new GetSubjectMatterUnitTableOfContentsQuery(Guid.Parse("6c871eff-8f15-4233-987d-b54f559bd94d")));
+            TableOfContents = await _tableOfContentsQueryHandler.Handle(new GetSubjectMatterUnitTableOfContentsQuery(Guid.Empty));
         }
                      
         private string textToPresent;

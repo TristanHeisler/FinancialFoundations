@@ -5,10 +5,17 @@
              x:Class="FinancialFoundations.MainPageView">
 
     <StackLayout>
-        <!--<Label Text="{Binding TextToPresent}"/>-->
-        <Label Text="Not from VM"/>
+        <Label HorizontalTextAlignment="Center" Text="Available Financial Literacy Units"/>
 
-        <!--Display all the elements in the TableOfContents-->
+        <ListView ItemsSource="{Binding TableOfContents}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label HorizontalTextAlignment="Center" Text="{Binding Title}" VerticalTextAlignment="Center"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>

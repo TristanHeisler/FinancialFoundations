@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using SimpleInjector;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -9,10 +6,12 @@ namespace FinancialFoundations
 {
 	public partial class MainPageView : ContentPage
 	{
-		public MainPageView(MainPageViewModel viewModel)
+		public MainPageView()
 		{
-			InitializeComponent();
-            BindingContext = viewModel;
+            InitializeComponent();
+            var container = new Container();
+            container.RegisterDependencies();
+            BindingContext = container.GetInstance<MainPageViewModel>();
         }
-	}
+    }
 }
