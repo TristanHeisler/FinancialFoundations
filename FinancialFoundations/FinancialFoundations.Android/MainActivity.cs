@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using SimpleInjector;
 
 namespace FinancialFoundations.Droid
 {
@@ -17,7 +18,10 @@ namespace FinancialFoundations.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            base.OnCreate(savedInstanceState);
+			var container = new Container();
+			// TODO: register dependencies
+
+			base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }

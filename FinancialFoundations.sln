@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialFoundations.Android", "FinancialFoundations\FinancialFoundations.Android\FinancialFoundations.Android.csproj", "{89FFD93B-7238-4026-9D8C-19B86641506F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialFoundations", "FinancialFoundations\FinancialFoundations\FinancialFoundations.csproj", "{31F30650-2E99-4363-9D27-357A3513864D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialFoundations", "FinancialFoundations\FinancialFoundations\FinancialFoundations.csproj", "{31F30650-2E99-4363-9D27-357A3513864D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialFoundations.Framework", "FinancialFoundations.Framework\FinancialFoundations.Framework.csproj", "{1B9A8CB3-1BEB-44B2-908C-41652CF7638B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{31F30650-2E99-4363-9D27-357A3513864D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31F30650-2E99-4363-9D27-357A3513864D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{31F30650-2E99-4363-9D27-357A3513864D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1B9A8CB3-1BEB-44B2-908C-41652CF7638B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B9A8CB3-1BEB-44B2-908C-41652CF7638B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B9A8CB3-1BEB-44B2-908C-41652CF7638B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B9A8CB3-1BEB-44B2-908C-41652CF7638B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
