@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace FinancialFoundations
 {
@@ -40,19 +41,10 @@ namespace FinancialFoundations
         {
             TableOfContents = await _tableOfContentsQueryHandler.Handle(new GetSubjectMatterUnitTableOfContentsQuery(Guid.Empty));
         }
-                     
-        private string textToPresent;
-        public string TextToPresent
+
+        public void SelectUnit()
         {
-            set
-            {
-                if (textToPresent != value)
-                {
-                    textToPresent = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TextToPresent"));
-                }
-            }
-            get => textToPresent;
+            Console.WriteLine("A unit was selected\n");
         }
     }
 }

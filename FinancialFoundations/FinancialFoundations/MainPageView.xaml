@@ -10,8 +10,10 @@
         <ListView ItemsSource="{Binding TableOfContents}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <Label HorizontalTextAlignment="Center" Text="{Binding Title}" VerticalTextAlignment="Center"/>
+                    <ViewCell Tapped="ViewCell_Tapped">
+                        <StackLayout>
+                            <Label HorizontalTextAlignment="Center" Text="{Binding Title}" VerticalTextAlignment="Center"/>
+                        </StackLayout>                        
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
