@@ -19,7 +19,7 @@ namespace FinancialFoundations
         private void ViewCell_Tapped(object sender, System.EventArgs e)
         {
             var subjectMatterUnitID = ((SubjectMatterUnitTableOfContentsEntry)((BindableObject)sender).BindingContext).SubjectMatterUnitID;
-            Console.WriteLine(unitID);
+            Console.WriteLine(subjectMatterUnitID);
         }
     }
 }

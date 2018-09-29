@@ -14,7 +14,7 @@ namespace FinancialFoundations
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private IAsyncQueryHandler<GetSubjectMatterUnitTableOfContentsQuery, IEnumerable<SubjectMatterUnitTableOfContentsEntry>> _tableOfContentsQueryHandler;
+        private IAsyncQueryHandler<GetSubjectMatterUnitTableOfContentsQuery, SubjectMatterUnitTableOfContents> _tableOfContentsQueryHandler;
 
         private IEnumerable<SubjectMatterUnitTableOfContentsEntry> _tableOfContents;
         public IEnumerable<SubjectMatterUnitTableOfContentsEntry> TableOfContents
@@ -30,7 +30,7 @@ namespace FinancialFoundations
             get => _tableOfContents;
         }
 
-        public MainPageViewModel(IAsyncQueryHandler<GetSubjectMatterUnitTableOfContentsQuery, IEnumerable<SubjectMatterUnitTableOfContentsEntry>> tableOfContentsQueryHandler)
+        public MainPageViewModel(IAsyncQueryHandler<GetSubjectMatterUnitTableOfContentsQuery, SubjectMatterUnitTableOfContents> tableOfContentsQueryHandler)
         {
             _tableOfContentsQueryHandler = tableOfContentsQueryHandler;
 
@@ -39,7 +39,7 @@ namespace FinancialFoundations
 
         public async Task LoadTableOfContents()
         {
-            TableOfContents = await _tableOfContentsQueryHandler.Handle(new GetSubjectMatterUnitTableOfContentsQuery(Guid.Empty));
+            TableOfContents = (await _tableOfContentsQueryHandler.Handle(new GetSubjectMatterUnitTableOfContentsQuery(Guid.Empty))).EntryCollection;
         }
     }
 }
