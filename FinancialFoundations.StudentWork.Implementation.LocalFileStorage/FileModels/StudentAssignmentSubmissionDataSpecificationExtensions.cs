@@ -18,7 +18,7 @@ namespace FinancialFoundations.StudentWork.Implementation.LocalFileStorage.FileM
 
 		public static StudentAssignmentSubmission ToStudentAssignmentSubmission(this StudentAssignmentSubmissionDataSpecification source)
 		{
-			return new StudentAssignmentSubmission(source.EducatorID, source.AssignmentID, source.StudentID, source.AnswerCollection.Select(x => x.).ToArray());
+			return new StudentAssignmentSubmission(source.EducatorID, source.AssignmentID, source.StudentID, source.AnswerCollection.Select(x => x.ToStudentAssignmentSubmissionMultipleChoiceQuestionAnswer()).ToArray());
 		}
 	}
 }
