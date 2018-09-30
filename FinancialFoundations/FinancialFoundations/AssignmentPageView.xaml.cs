@@ -23,7 +23,8 @@ namespace FinancialFoundations
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            var selectedItem = ((Picker)sender).SelectedItem as AssignmentMultipleChoiceQuestionAnswerForDisplay;
+            ViewModel.AssignmentData.SetAnswer(selectedItem.QuestionID, selectedItem.AnswerID);
         }
 
 		private AssignmentPageViewModel ViewModel => ((AssignmentPageViewModel) BindingContext);
@@ -31,14 +32,14 @@ namespace FinancialFoundations
 		private async void Button_OnClicked(object sender, EventArgs e)
 		{
 			await ViewModel.AssignmentData.ToStudentAssignmentSubmission().ApplyAsync(DisplayGrade, ShowAssignmentNotCompleted);
-			await Navigation.PopToRootAsync();
 		}
 
 		private async Task DisplayGrade(StudentAssignmentSubmission completedAssignment)
 		{
 			var grade = await ViewModel.GradeAssignment(completedAssignment);
 			await DisplayAlert("Assignment Submitted", $"{grade.NumberOfCorrectAnswers} / {grade.NumberOfQuestions}", "OK");
-		}
+            await Navigation.PopToRootAsync();
+        }
 
 		private async Task ShowAssignmentNotCompleted()
 		{
