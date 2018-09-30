@@ -101,7 +101,7 @@ namespace FinancialFoundations.Droid
                             AssignmentID = assignmentID,
                             QuestionID = questionID,
                             AnswerID = answerID,
-                            AnswerText = "Answer"
+                            AnswerText = "Placeholder Answer"
 						});
 						File.WriteAllText(answerFileName, answerJsonContents, Encoding.UTF8);
 					}

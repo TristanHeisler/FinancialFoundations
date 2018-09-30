@@ -14,36 +14,42 @@ namespace FinancialFoundations
 		public AssignmentPageView(Guid studentID, Assignment assignment)
 		{
             InitializeComponent();
+<<<<<<< HEAD
 			var configuration = new AssignmentPageViewModelConfiguration(studentID, assignment);
+=======
+			var configuration = new AssignmentPageViewModelConfiguration(Guid.Empty, assignment);
+>>>>>>> b6c8a30... Progress on answers.
             var container = new Container();
             container.RegisterDependencies();
 			container.RegisterInstance(configuration);
             BindingContext = container.GetInstance<AssignmentPageViewModel>();
         }
 
-        private void Picker_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var selectedItem = ((Picker)sender).SelectedItem as AssignmentMultipleChoiceQuestionAnswerForDisplay;
-            ViewModel.AssignmentData.SetAnswer(selectedItem.QuestionID, selectedItem.AnswerID);
-        }
-
+<<<<<<< HEAD
 		private AssignmentPageViewModel ViewModel => ((AssignmentPageViewModel) BindingContext);
 
 		private async void Button_OnClicked(object sender, EventArgs e)
 		{
 			await ViewModel.AssignmentData.ToStudentAssignmentSubmission().ApplyAsync(DisplayGrade, ShowAssignmentNotCompleted);
+			await Navigation.PopToRootAsync();
 		}
 
 		private async Task DisplayGrade(StudentAssignmentSubmission completedAssignment)
 		{
 			var grade = await ViewModel.GradeAssignment(completedAssignment);
 			await DisplayAlert("Assignment Submitted", $"{grade.NumberOfCorrectAnswers} / {grade.NumberOfQuestions}", "OK");
-            await Navigation.PopToRootAsync();
-        }
+		}
 
 		private async Task ShowAssignmentNotCompleted()
 		{
 			await DisplayAlert("Assignment Not Completed", $"Please complete the assignment.", "OK");
 		}
 	}
+=======
+        private void Picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+>>>>>>> b6c8a30... Progress on answers.
 }
