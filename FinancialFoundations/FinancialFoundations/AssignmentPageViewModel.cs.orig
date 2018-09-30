@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 using FinancialFoundations.Extensions;
 using FinancialFoundations.Framework;
 using FinancialFoundations.Models;
+<<<<<<< HEAD
 using FinancialFoundations.StudentWork.CoreProcessing;
-using System.Collections.Generic;
 using FinancialFoundations.StudentWork.Domain;
 using FinancialFoundations.StudentWork.Domain.Queries;
 using Functional;
+=======
+using System.Collections.Generic;
+>>>>>>> b6c8a30... Progress on answers.
 
 namespace FinancialFoundations
 {

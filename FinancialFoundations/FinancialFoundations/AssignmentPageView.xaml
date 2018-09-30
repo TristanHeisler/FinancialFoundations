@@ -9,12 +9,10 @@
         <ListView HasUnevenRows="True" ItemsSource="{Binding MultipleChoiceQuestionCollection}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell IsEnabled="false">
+                    <ViewCell>
                         <StackLayout Orientation="Vertical">
                             <Label Text="{Binding QuestionText}"/>
-                            <Label HorizontalTextAlignment="Center" Text="{Binding AnswerCollection[0].AnswerText}" VerticalTextAlignment="Center"/>
-                            <Label HorizontalTextAlignment="Center" Text="{Binding AnswerCollection[1].AnswerText}" VerticalTextAlignment="Center"/>
-                            <Label HorizontalTextAlignment="Center" Text="{Binding AnswerCollection[2].AnswerText}" VerticalTextAlignment="Center"/>
+                            <Picker ItemsSource="{Binding AnswerCollection}" Title="Select Answer" SelectedIndexChanged="Picker_SelectedIndexChanged"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
